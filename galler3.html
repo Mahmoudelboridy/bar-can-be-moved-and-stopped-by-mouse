@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>gallary 2</title>
+<style>
+img{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    }
+    img:hover{
+        transform: scale(1.001);
+        border: 2px solid rgb(106, 0, 255);
+    }
+
+</style>
+</head>
+<body>
+<img src="1.jpg" id="d1" onmouseenter="stop()" onmouseleave="mnr()"  />
+<img src="2.jpg" id="d2" onmouseenter="stop()" onmouseleave="mnr()" style="left:210px;" />
+<img src="3.jpg" id="d3" onmouseenter="stop()" onmouseleave="mnr()" style="left:420px;" />
+<img src="4.jpg" id="d4" onmouseenter="stop()" onmouseleave="mnr()" style="left:630px;" />
+<img src="5.jpg" id="d5" onmouseenter="stop()" onmouseleave="mnr()" style="left:840px;" />
+<img src="6.jpeg" id="d6" onmouseenter="stop()" onmouseleave="mnr()" style="left:1050px;" />
+<script>
+    let ani ;
+let d1=document.getElementById('d1');
+let d2=document.getElementById('d2');
+let d3=document.getElementById('d3');
+let d4=document.getElementById('d4');
+let d5=document.getElementById('d5');
+let d6=document.getElementById('d6');
+let x1=0,x2=210,x3=420,x4=630,x5=840,x6=1050;
+
+function mnr(){
+    
+    x1=x1+52.5;
+    x2=x2+52.5;
+    x3=x3+52.5;
+    x4=x4+52.5;
+    x5=x5+52.5;
+    x6=x6+52.5;
+
+    d1.style.left =x1;
+    d2.style.left =x2;
+    d3.style.left =x3;
+    d4.style.left =x4;
+    d5.style.left =x5;
+    d6.style.left =x6;
+   ani=setTimeout("mnr()",500);
+    if(x1>1260){
+x1=0;
+}
+if(x2>1260){
+x2=0;
+}
+if(x3>1260){
+x3=0;
+}
+if(x4>1260){
+x4=0;
+}
+if(x5>1260){
+x5=0;
+}
+if(x6>1260){
+x6=0;
+}
+}
+mnr();
+function stop(){
+               clearTimeout(ani);
+            }
+</script>
+</body>
+</html>
